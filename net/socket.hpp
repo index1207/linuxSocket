@@ -14,7 +14,7 @@ namespace net {
 				memset(&addr, 0, sizeof(addr)); 
 			}
 
-			Socket(u_short af, u_short _proto) : s(0), family(AF_INET), proto(IPPROTO_TCP) {
+			Socket(u_short af, u_short _proto) : s(0), family(af), proto(_proto) {
 				memset(&addr, 0, sizeof(addr));
 				if (proto == IPPROTO_TCP) {
 					s = socket(family, SOCK_STREAM, proto);
